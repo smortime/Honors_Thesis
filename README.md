@@ -14,10 +14,10 @@ data folder
 
 Contributors
 ========
--Schuyler Mortimer, smortime@asu.edu
+- Schuyler Mortimer, smortime@asu.edu
 
 Release Notes
 ========
--September 30, 2015
-  -Setup the README.md files and added descriptions
-  -Added script to pull from twitter API
+- September 30, 2015
+  - Setup the README.md files and added descriptions
+  - Added script to pull from twitter API

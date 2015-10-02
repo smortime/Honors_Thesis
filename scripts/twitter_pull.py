@@ -1,7 +1,14 @@
 #Schuyler Mortimer Honors Thesis
 import csv
 import numpy as np
+import time
+import json
 from twython import Twython
+
+#Removes special characters from tweet text
+def Remove_Character(character, text):
+    new_text = text.replace(character, "")
+    return new_text
 
 #Setting up the Twitter API requirements / Twython
 APP_KEY = "Insert APP_KEY here"
@@ -57,6 +64,11 @@ with open("test.csv", "wb") as tweets:
         for j in range(0,tweet_count):
             try:
                 text = search[j] ['text']
+
+                #Checks for semicolon / removes from string if it contains one
+                if(";" in text):
+                    text = Remove_Character(";", text)
+
             except IndexError:
                 text = 'null'
 
