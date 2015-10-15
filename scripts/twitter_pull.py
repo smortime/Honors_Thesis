@@ -1,9 +1,8 @@
 #Schuyler Mortimer Honors Thesis
 import csv
 import numpy as np
-import time
-import json
 from twython import Twython
+import shelve
 
 #Removes special characters from tweet text
 def Remove_Character(character, text):
@@ -11,17 +10,16 @@ def Remove_Character(character, text):
     return new_text
 
 #Setting up the Twitter API requirements / Twython
-APP_KEY = "Insert APP_KEY here"
-APP_SECRET = "Insert APP_SECRET here"
+APP_KEY = "PUT APP KEY_HERE"
+APP_SECRET = "PUT APP_SECRET HERE"
 twitter = Twython(APP_KEY, APP_SECRET, oauth_version=2)
 ACCESS_TOKEN = twitter.obtain_access_token()
 twitter = Twython(APP_KEY, access_token=ACCESS_TOKEN)
 
-#Prepping candidates' twitter users from csv file
-candidates_file = open("candidates_twitter.csv", "rb")
+#Prepping candidates' twitter handles from csv file
+candidates_file = open('/home/schuyler/Desktop/Honors_Thesis/data_sets/candidates_twitter.csv', "rb")
 candidates_reader = csv.reader(candidates_file)
 
-#Storing the user names in a list
 candidates_list = []
 for candidate in candidates_reader:
     candidates_list.append(candidate)
@@ -31,11 +29,17 @@ row_count = len(candidates_list)
 #Number of tweets you want to pull PER candidate
 tweet_count = 200
 
+#Auto naming file name everytime script is pulled
+shelf_file = shelve.open('/home/schuyler/Desktop/Honors_Thesis/data_sets/file_version')
+file_name = '/home/schuyler/Desktop/Honors_Thesis/data_sets/twitter_pulls/pull' + str(shelf_file['version']) + '.csv'
+shelf_file['version'] = shelf_file['version'] + 1
+shelf_file.close()
+
 print "twitter_pull.py is running..."
 
 #Iterate through the candidates and pull their most recent 200 tweets
 #Writes tweet, date, favorites, and retweets to a csv
-with open("test.csv", "wb") as tweets:
+with open(file_name, "wb") as tweets:
 
     #Add header
     writer = csv.writer(tweets)
@@ -60,7 +64,6 @@ with open("test.csv", "wb") as tweets:
         else:
             writer = csv.writer(tweets)
 
-        #Pulls specific parts of the candidate's timeline
         for j in range(0,tweet_count):
             try:
                 text = search[j] ['text']

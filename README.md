@@ -10,7 +10,7 @@ scripts folder
 
 data folder
 =====
-**This folder contains the data sets that were output from the Twitter API scripts and data cleaning scripts. Detailed explanations of the data sets can be found within the data folder.**
+**This folder contains the data sets that were output from the Twitter API and data cleaning scripts. Detailed explanations of the data sets can be found within the data folder.**
 
 Contributors
 ========
@@ -21,3 +21,6 @@ Release Notes
 - September 30, 2015
   - Setup the README.md files and added descriptions
   - Added script to pull from twitter API
+- October 15, 2015
+  - Changed how / where twitter_pull saves files
+  - Added data sets and descriptions
