@@ -2,7 +2,7 @@
 
 Overview
 =====
-**Honors_Thesis is a repository that contains the scripts used to pull data from the twitter API, clean / organize the twitter data, and implement a topic model. This is for my undergraduate honors thesis that is looking to find correlation between the topics presidential candidates are tweeting about and their Gallup polls.**
+**Honors_Thesis is a repository that contains the scripts used to pull data from the twitter API, clean / organize the twitter data, and implement a topic model. This is for my undergraduate honors thesis that is looking to find correlation between the topics presidential candidates are tweeting about and their Gallup polls. Several different models will be used in order to accomplish this and to visualize the results.**
 
 scripts folder
 =====
@@ -22,5 +22,8 @@ Release Notes
   - Setup the README.md files and added descriptions
   - Added script to pull from twitter API
 - October 15, 2015
-  - Changed how / where twitter_pull saves files
+  - Changed how / where twitter_pull.py saves files
   - Added data sets and descriptions
+- November 22, 2015
+ - Added pull data sets / master Setup
+ - Minor changes to pull script

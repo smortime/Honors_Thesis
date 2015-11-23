@@ -1,6 +1,6 @@
 Scripts Overview
 ======
-###1. create_shelf.py
+###1. [create_shelf.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/create_shelf.py)
 - **Purpose:** Sets up a shelve file so that [twitter_pull.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/twitter_pull.py) can add / keep track of the pull number to the output's file name. Starts at 3 because I pulled twice before implementing this feature.
 
 ###2. [twitter_pull.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/twitter_pull.py)
