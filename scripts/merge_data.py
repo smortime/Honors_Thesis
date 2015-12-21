@@ -15,8 +15,7 @@ with open(master_path, "rb") as master, open(new_path, "rb") as new:
         data = [tuple(line) for line in csv.reader(master)]
     except:
         print "Nothing in file"
-
-    #reads in the file to be added as a list of tuples
+        
     try:
         next(new)
         new_data = [tuple(line) for line in csv.reader(new)]

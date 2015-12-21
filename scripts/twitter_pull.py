@@ -10,8 +10,8 @@ def Remove_Character(character, text):
     return new_text
 
 #Setting up the Twitter API requirements / Twython
-APP_KEY = "PUT APP_KEY HERE"
-APP_SECRET = "PUT APP_SECRET HERE"
+APP_KEY = "APP_KEY GOES HERE"
+APP_SECRET = "APP SECRET GOES HERE"
 twitter = Twython(APP_KEY, APP_SECRET, oauth_version=2)
 ACCESS_TOKEN = twitter.obtain_access_token()
 twitter = Twython(APP_KEY, access_token=ACCESS_TOKEN)
