@@ -9,7 +9,7 @@ Scripts Overview
 ##3. [date_count.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/date_count.py)
 - **Purpose:** Creates a csv with each date and the number of tweets for that day between all the candidates. These counts are mostly just for some exploratory reasons.
 
-##4. [date_split.py](google.com)
+##4. [date_split.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/date_split.py)
 - **Purpose:** Creates a csv that contains only the tweets from the user defined period. The output csv from this script will generally be used in the models.
 
 ###Dependencies / Notes
