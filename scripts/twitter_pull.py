@@ -5,7 +5,7 @@ from twython import Twython
 import shelve
 
 #Removes special characters from tweet text
-def Remove_Character(character, text):
+def remove_character(character, text):
     new_text = text.replace(character, "")
     return new_text
 
@@ -35,7 +35,7 @@ file_name = '/home/schuyler/Desktop/Honors_Thesis/data_sets/twitter_pulls/pull' 
 shelf_file['version'] = shelf_file['version'] + 1
 shelf_file.close()
 
-print "twitter_pull.py is running..."
+print "twitter_pull.py is running...\n"
 
 #Iterate through the candidates and pull their most recent 200 tweets
 #Writes tweet, date, favorites, and retweets to a csv
@@ -110,4 +110,4 @@ with open(file_name, "wb") as tweets:
             for data in array:
                 writer.writerow(data)
 
-print "twitter_pull.py is complete"
+print "\ntwitter_pull.py is complete"

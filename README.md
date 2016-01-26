@@ -27,3 +27,6 @@ Release Notes
 - November 22, 2015
  - Added pull data sets / master Setup
  - Minor changes to pull script
+- January 26, 2016
+ - Added script to split main data set by date
+ - Put in script where LDA model will be built
