@@ -1,42 +1,49 @@
 #Schuyler Mortimer Honors Thesis
-#NOT READY TO BE USED, STILL NEEDS MAJOR WORK
 import csv
 
-print "Running merge_data"
+def add_master():
+    with open('/home/schuyler/Desktop/master.csv', 'rb') as f:
 
-master_path = "/home/schuyler/Desktop/data_sets/master.csv"
-new_path = raw_input("Path of file to add to master file: ")
+        reader = csv.reader(f)
+        temp = list(reader)
+        date = []
+        text = []
 
-with open(master_path, "rb") as master, open(new_path, "rb") as new:
+        for row in temp:
+            date.append(row[2])
+            text.append(row[1])
 
-    #reads the master file in a list of tuples
-    try:
-        next(master)
-        data = [tuple(line) for line in csv.reader(master)]
-    except:
-        print "Nothing in file"
-        
-    try:
-        next(new)
-        new_data = [tuple(line) for line in csv.reader(new)]
-    except:
-        print "Something is wrong..."
+        return date, text
 
-    #Add the new file to the master list of tuples
-    for tup in new_data:
-        data.append(tup)
+def add_new_data(text, date):
 
-with open(master_path, "wb") as master:
+    #added data sets up to pull16.csv
+    files = ['pull1.csv', 'pull2.csv', 'pull3.csv', 'pull4.csv', 'pull5.csv', 'pull6.csv', 'pull7.csv', 'pull8.csv', \
+    'pull9.csv', 'pull10.csv', 'pull11.csv', 'pull12.csv', 'pull13.csv', 'pull14.csv','pull15.csv', 'pull16.csv']
 
-    #clears master file for rewrite
-    master.truncate()
+    for f in files:
+        file_name = "/home/schuyler/Desktop/Honors_Thesis/data_sets/twitter_pulls/" + f
+        with open(file_name, 'rb') as f, open('/home/schuyler/Desktop/Honors_Thesis/data_sets/master.csv', 'a') as m:
 
-    #writes the header
-    writer = csv.writer(master)
-    writer.writerow(["user_name", "tweet_body", "date", "favorite_count", "retweet_count", "retweeted", "source"])
+            reader = csv.reader(f)
+            writer = csv.writer(m)
+            temp = list(reader)
 
-    #writes all tuples to master file
-    for row in data:
-        writer.writerow(row)
+            for row in temp:
+                if row[1] not in text and row[2] not in date:
+                    writer.writerow(row)
+                    text.append(row[1])
+                    date.append(row[2])
+                    print row
+                elif row[1] not in text:
+                    text.append(row[1])
+                    print row
 
-print "merge_data complete"
+def main():
+    print "[+] Running merge_data.py \n"
+    date, text = add_master()
+    add_new_data(text, date)
+    print "\n[+] merge_data.py is complete"
+
+if __name__ == '__main__':
+    main()

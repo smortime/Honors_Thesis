@@ -1,34 +1,54 @@
 #Schuyler Mortimer Honors Thesis
-import pandas as pd
 import csv
 
-df = pd.read_csv("/home/schuyler/Desktop/Honors_Thesis/data_sets/master_data.csv")
-
-dates_count = {}
-
-#Adds new dates to dates_count dictionary, incraments by one if already in dictionary
-for date in df["date"]:
-    temp_date = date[0:10]
-
-    if temp_date not in dates_count:
-        dates_count[temp_date] = 1
-    else:
-        dates_count[temp_date] += 1
-
-#Print line is just for debug purposes
-for k, v in dates_count.items():
-    print v, k
-
-#Writes the dictionary to a CSV
-with open("/home/schuyler/Desktop/Honors_Thesis/data_sets/date_counts.csv", "wb") as dates:
+def fix_date(bad):
+    date_list = bad.split()
 
     try:
-        dates.truncate()
+        if date_list[1] in ('May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'):
+            year = '2015'
+        else:
+            year = '2016'
     except:
-        pass
+        return 'NA'
 
-    writer = csv.writer(dates)
-    writer.writerow(["Count", "Date"])
+    return date_list[1] + " " + date_list[2] + ", " + year
 
-    for k, v in dates_count.items():
-        writer.writerow([v,k])
+
+def import_master(date_count):
+    with open('/home/schuyler/Desktop/Honors_Thesis/data_sets/master.csv', 'rb') as f:
+        reader = csv.reader(f)
+        temp = list(reader)
+
+        for row in temp:
+            date = fix_date(row[2])
+            if date not in date_count:
+                date_count[date] = 1
+            else:
+                date_count[date] += 1
+
+def write_to_csv(date_count):
+    with open("/home/schuyler/Desktop/Honors_Thesis/data_sets/date_counts.csv", "wb") as dates:
+
+        try:
+            dates.truncate()
+        except:
+            pass
+
+        writer = csv.writer(dates)
+        writer.writerow(["Count", "Date"])
+
+        for k, v in date_count.items():
+            writer.writerow([v, k])
+
+def main():
+    date_count = {}
+    import_master(date_count)
+
+    for k, v in date_count.items():
+        print v, k
+
+    write_to_csv(date_count)
+
+if __name__ == '__main__':
+    main()

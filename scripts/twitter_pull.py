@@ -10,8 +10,8 @@ def remove_character(character, text):
     return new_text
 
 #Setting up the Twitter API requirements / Twython
-APP_KEY = "APP_KEY GOES HERE"
-APP_SECRET = "APP SECRET GOES HERE"
+APP_KEY = "INSERT APP_KEY"
+APP_SECRET = "INSERT APP_SECRET"
 twitter = Twython(APP_KEY, APP_SECRET, oauth_version=2)
 ACCESS_TOKEN = twitter.obtain_access_token()
 twitter = Twython(APP_KEY, access_token=ACCESS_TOKEN)
@@ -70,7 +70,7 @@ with open(file_name, "wb") as tweets:
 
                 #Checks for semicolon / removes from string if it contains one
                 if(";" in text):
-                    text = Remove_Character(";", text)
+                    text = remove_character(";", text)
 
             except IndexError:
                 text = 'null'
