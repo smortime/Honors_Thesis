@@ -28,7 +28,7 @@ def import_master(date_count):
                 date_count[date] += 1
 
 def write_to_csv(date_count):
-    with open("/home/schuyler/Desktop/Honors_Thesis/data_sets/date_counts.csv", "wb") as dates:
+    with open('/home/schuyler/Desktop/Honors_Thesis/data_sets/date_counts.csv', 'wb') as dates:
 
         try:
             dates.truncate()
