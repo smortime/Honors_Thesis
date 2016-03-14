@@ -10,15 +10,15 @@ def remove_character(character, text):
     return new_text
 
 #Setting up the Twitter API requirements / Twython
-APP_KEY = "INSERT APP_KEY"
-APP_SECRET = "INSERT APP_SECRET"
+APP_KEY = "APP_KEY HERE"
+APP_SECRET = "APP_SECRET HERE"
 twitter = Twython(APP_KEY, APP_SECRET, oauth_version=2)
 ACCESS_TOKEN = twitter.obtain_access_token()
 twitter = Twython(APP_KEY, access_token=ACCESS_TOKEN)
 
 #Prepping candidates' twitter handles from csv file
-candidates_file = open('/home/schuyler/Desktop/Honors_Thesis/data_sets/candidates_twitter.csv', "rb")
-candidates_reader = csv.reader(candidates_file)
+candidate_file = open('/home/schuyler/Desktop/Honors_Thesis/data_sets/candidates_twitter.csv', "rb")
+candidates_reader = csv.reader(candidate_file)
 
 candidates_list = []
 for candidate in candidates_reader:

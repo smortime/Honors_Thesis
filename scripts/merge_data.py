@@ -2,7 +2,7 @@
 import csv
 
 def add_master():
-    with open('/home/schuyler/Desktop/master.csv', 'rb') as f:
+    with open('/home/schuyler/Desktop/Honors_Thesis/data_sets/master.csv', 'rb') as f:
 
         reader = csv.reader(f)
         temp = list(reader)
@@ -17,8 +17,8 @@ def add_master():
 
 def add_new_data(text, date):
 
-    #added data sets up to pull16.csv
-    files = [#Put files you want to add here]
+    #insert the file names that need to be added
+    files = ['''Up through 19 added''']
 
     for f in files:
         file_name = "/home/schuyler/Desktop/Honors_Thesis/data_sets/twitter_pulls/" + f
