@@ -1,0 +1,8 @@
+#Parameters
+k <- 15
+burnin <- 4000
+iter <- 2000
+thin = 500
+seed <- list(2003,5,63,1000001,765)
+nstart <- 5
+best <- TRUE
