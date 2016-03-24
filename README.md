@@ -1,4 +1,5 @@
-# Working Title
+# Value of Twitter
+## Using Text Mining Methods to Gain Insight into the 2016 Presidential Race
 
 Overview
 =====
@@ -29,4 +30,7 @@ Release Notes
  - Minor changes to pull script
 - January 26, 2016
  - Added script to split main data set by date
- - Put in script where LDA model will be built
+ - Finished script to merge data
+- March 15, 2015
+ - Added correct term frequency script
+ - Added LDA model and results from k = 15 and k = 20
