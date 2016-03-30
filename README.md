@@ -1,5 +1,5 @@
 # Value of Twitter
-## Using Text Mining Methods to Gain Insight into the 2016 Presidential Race
+## Using Text Mining Methods to Gain Insight into the 2016 Presidential Race:
 
 Overview
 =====
