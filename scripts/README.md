@@ -12,6 +12,21 @@ Scripts Overview
 ##4. [date_split.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/date_split.py)
 - **Purpose:** Creates a csv that contains only the tweets from the user defined period. The output csv from this script will generally be used in the models.
 
+##5. [candidate_count.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/candidate_count.py)
+- **Purpose:** Returns candidates with how many tweets they have in master.csv.
+
+##6. [csv_to_text.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/csv_to_text.py)
+- **Purpose:** Converts the tweet text column found in .csv files into individual text files per each tweet. LDA model requires the data to be in text files.
+
+##7. [merge_data.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/merge_data.py)
+- **Purpose:** Takes in all the pullx.csv files and merges into master.csv, gets rid of the duplicate tweets.
+
+##8. [term_frequency.py](https://github.com/smortime/Honors_Thesis/blob/master/scripts/term_frequency.py)
+- **Purpose:** Implementation of term frequency, counts the occurence of every word in tweet data set, with some minimal preprocessing.
+
+##9. [LDA.R](https://github.com/smortime/Honors_Thesis/blob/master/scripts/LDA.R)
+- **Purpose:** The implementation of LDA model, the preprocessing is done within this script aswell. 
+
 ###Dependencies / Notes
 - **_Python_** All scripts were run using Python 2.7.6.
 - **_Twython:_** All scripts that pull from the Twitter API require the [Twython library](https://github.com/ryanmcgrath/twython).
