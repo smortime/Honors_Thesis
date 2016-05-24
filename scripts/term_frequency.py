@@ -26,6 +26,7 @@ def preprocess(tweet):
 
     processed_tweet = [i for i in processed_tweet if i not in stop]
     processed_tweet = [i for i in processed_tweet if i not in punctuation]
+
     return processed_tweet
 
 def frequency_count(text):

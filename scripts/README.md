@@ -28,6 +28,7 @@ Scripts Overview
 - **Purpose:** The implementation of LDA model, the preprocessing is done within this script aswell. 
 
 ###Dependencies / Notes
-- **_Python_** All scripts were run using Python 2.7.6.
+- **_Python_:** All scripts were run using Python 2.7.6.
+- **_R_** 
 - **_Twython:_** All scripts that pull from the Twitter API require the [Twython library](https://github.com/ryanmcgrath/twython).
 - **_Pandas / Numpy_** Some scripts will require [Pandas](http://pandas.pydata.org/) and [NumPy](http://www.numpy.org/).
