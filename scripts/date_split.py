@@ -23,10 +23,10 @@ def split_csv_dates(date):
 def main():
 
     start_month, start_day, end_month, end_day = get_dates()
-    file_name = '/home/schuyler/Desktop/Honors_Thesis/data_sets/model_data/' + start_month + str(start_day) + '.csv'
+    file_name = '/home/schuyler/Documents/Honors_Thesis/data_sets/HICSS/' + start_month + str(start_day) + '.csv'
 
 
-    with open('/home/schuyler/Desktop/Honors_Thesis/data_sets/master.csv', 'rb') as master, open(file_name, 'wb') as test:
+    with open('/home/schuyler/Documents/Honors_Thesis/data_sets/master.csv', 'rb') as master, open(file_name, 'wb') as test:
         reader = csv.reader(master)
         writer = csv.writer(test)
 
