@@ -3,7 +3,7 @@ library(topicmodels)
 
 stop_words <- stopwords("SMART")
 
-setwd("/home/schuyler/Desktop/testing")
+setwd("/home/schuyler/Documents/text_files/oct/")
 
 filenames <- list.files(getwd(), pattern="*.txt")
 files <- lapply(filenames, readLines)
@@ -22,7 +22,7 @@ tweets <- tm_map(tweets, stripWhitespace)
 #make a table of terms
 dtm <- DocumentTermMatrix(tweets)
 rownames(dtm) <- filenames
-dtms <- removeSparseTerms(dtm, .997)
+#dtms <- removeSparseTerms(dtm, .997)
 freq <- colSums(as.matrix(dtms))
 ord <- order(freq, decreasing=TRUE)
 write.csv(freq[ord], "/home/schuyler/Documents/Honors_Thesis/data_sets/HICSS/results/oct/word_freq.csv")
